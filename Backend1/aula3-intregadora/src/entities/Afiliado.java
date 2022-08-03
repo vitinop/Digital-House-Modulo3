@@ -1,8 +1,8 @@
 package entities;
 
-public class Afiliado extends Vendedor {
+public class Afiliado extends Vendedor{
 
-    public Afiliado(String nome) {
+    public Afiliado(String nome){
         super.nome = nome;
         super.pontosPorVenda = 15;
     }

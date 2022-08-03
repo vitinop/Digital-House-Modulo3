@@ -5,34 +5,39 @@ public abstract class Vendedor {
     protected String nome;
     protected int vendas = 0;
     protected int pontosPorVenda;
+    private String categoria;
 
-    // Métodos
-    public void vender(int qtdeVendas) {
-        this.vendas = qtdeVendas;
-        System.out.println(this.nome + " realizou " + qtdeVendas + " vendas.");
+
+    public void vender(int qtdVendas){
+        this.vendas = qtdVendas;
+        System.out.println(this.nome + "realizou " + qtdVendas + " vendas.");
     }
 
-    /* Método que calcula os pontos do Vendedor de acordo com seus aspectos a serem considerados*/
+
+    /* Método que calcula os pontos do Vendedor de acordo com seus aspectos a serem condiderados */
+
 
     public abstract int calcularPontos();
 
-    public String mostrarCategoria() {
-        int pontosVendedor = calcularPontos();
-        return this.nome + "  tem um total de " + pontosVendedor + " pontos, e  sua categoria é: " + getCategoria(pontosVendedor);
+
+
+    public String mostrarCategoriaVendedor(){
+        int pontos;
+        pontos = calcularPontos();
+        System.out.println(this.nome + " tem " + pontos);
+
+        if (pontos < 20){
+            System.out.println(this.nome + " é um vendedor categoria novato");
+        } else if (pontos > 20 && pontos <30) {
+            System.out.println(this.nome + " é um vendedor categoria aprendiz");
+        } else if (pontos > 31 && pontos < 49) {
+            System.out.println(this.nome + " é um vendedor categoria bom");
+        } else if (pontos > 40) {
+            System.out.println(this.nome + " é um vendedor categoria mestre");
+        }
+
+        return "";
     }
-    public String getCategoria(int pontosVendedor) {
-        if ( pontosVendedor > 40) {
-            return "Mestre";
-        }
-        else if (pontosVendedor>30 && pontosVendedor<40 ){
-            return "Bom";
-        }
-        else if (pontosVendedor>=20 && pontosVendedor<=30 ) {
-            return "Aprendiz";
-        }
-        else if (pontosVendedor<20) {
-            return "Novato";
-        }
-        return null;
-    }
+
+
 }

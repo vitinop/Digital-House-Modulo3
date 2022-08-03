@@ -1,25 +1,29 @@
 package tests;
-import entities.Funcionario;
-import entities.Vendedor;
+
 import entities.Afiliado;
+import entities.Estagiario;
+import entities.Funcionario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 public class VendedorTest {
 
-    Vendedor vendedor1, vendedor2;
+    Funcionario funcionario1,afiliado1,estagiario1;
+
 
     @BeforeEach
     void doBefore(){
-        vendedor1 = new Funcionario("Victor",2);
-        vendedor2 = new Funcionario("Junior", 15);
+        funcionario1 = new Funcionario("jessica",3);
+        afiliado1 = new Afiliado("José");
+        estagiario1 = new Estagiario("Victor");
     }
 
     @Test
-    void test(){
-        vendedor1.mostrarCategoria();
-        vendedor2.mostrarCategoria();
+    void tests(){
+        funcionario1.mostrarCategoriaVendedor();
     }
-
 }
+
+
+
+
