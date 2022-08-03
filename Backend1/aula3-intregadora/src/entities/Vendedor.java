@@ -13,9 +13,26 @@ public abstract class Vendedor {
     }
 
     /* Método que calcula os pontos do Vendedor de acordo com seus aspectos a serem considerados*/
+
     public abstract int calcularPontos();
 
     public String mostrarCategoria() {
-        return "";
+        int pontosVendedor = calcularPontos();
+        return this.nome + "  tem um total de " + pontosVendedor + " pontos, e  sua categoria é: " + getCategoria(pontosVendedor);
+    }
+    public String getCategoria(int pontosVendedor) {
+        if ( pontosVendedor > 40) {
+            return "Mestre";
+        }
+        else if (pontosVendedor>30 && pontosVendedor<40 ){
+            return "Bom";
+        }
+        else if (pontosVendedor>=20 && pontosVendedor<=30 ) {
+            return "Aprendiz";
+        }
+        else if (pontosVendedor<20) {
+            return "Novato";
+        }
+        return null;
     }
 }

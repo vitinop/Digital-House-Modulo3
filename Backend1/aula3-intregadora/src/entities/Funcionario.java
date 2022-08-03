@@ -26,4 +26,6 @@ public class Funcionario extends Vendedor {
     public int calcularPontos() {
         return (this.afiliados.size() * 10) + (this.anosAntiguidade * 5);
     }
+
+
 }
