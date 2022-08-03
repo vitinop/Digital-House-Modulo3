@@ -28,6 +28,6 @@ public class Efetivo extends Funcionario {
 
     @Override
     public void depositar(double quantia) {
-        System.out.println("Foi depositado uma quantia de " + quantia);
+        System.out.println("Foi depositado uma quantia de: " + quantia);
     }
 }

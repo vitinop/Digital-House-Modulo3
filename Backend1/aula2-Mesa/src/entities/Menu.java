@@ -1,14 +1,24 @@
 package entities;
 
 public abstract class Menu {
-    public String nome_prato;
-    public String valor_prato;
+    //atributos
+    public String nomePrato;
+    public double valorPrato;
 
+    //construtor padrao
     public Menu() {
     }
 
-    public Menu(String nome_prato, String valor_prato) {
-        this.nome_prato = nome_prato;
-        this.valor_prato = valor_prato;
+    //construtor com sobrescrita
+    public Menu(String nomePrato, double valorPrato) {
+        this.nomePrato = nomePrato;
+        this.valorPrato = valorPrato;
     }
+
+    //métodos costumizados
+    public abstract void prepararPrato();
+    public abstract void montarMenu();
+    public abstract double obterPreco();
+
+
 }
