@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import MyTask from "./MyTask";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="row">
+        <article className="pt-5 pb-2">
+          <h1 className="h1">Todo List</h1>
+        </article>
+      </div>
+      <div className="row g-3">
+        <div className="col">
+          <label className="visually-hidden" for="AddTaskInput">
+            Add Task
+          </label>
+          <input
+            className="form-control form-control-lg"
+            id="AddTaskInput"
+            type="text"
+            placeholder="Add Task..."
+            aria-label="Add Task..."
+            data-todo-target="input-task"
+          />
+        </div>
+        <div className="col-auto">
+          <button className="btn btn-lg btn-primary" data-todo-target="add">
+            +
+          </button>
+        </div>
+      </div>
+      <MyTask />
     </div>
   );
 }
