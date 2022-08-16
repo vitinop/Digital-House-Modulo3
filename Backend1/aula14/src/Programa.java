@@ -1,5 +1,5 @@
 import org.apache.log4j.Logger;
-import  entities.Conta;
+import entities.Conta;
 import java.sql.*;
 
 public class Programa {
@@ -14,7 +14,7 @@ public class Programa {
 
     public static void main(String[] args) throws SQLException {
 
-        Conta c1 = new Conta("Bill Gates", "5544-1", 0.0);
+        Conta c1 = new Conta("Bill Gates", 5544-1, 0.0);
 
         Connection conexao = null;
 
@@ -26,14 +26,16 @@ public class Programa {
 
             PreparedStatement inserirDados = conexao.prepareStatement(INSERT_TABLE);
             inserirDados.setString(1, c1.getNome());
-            inserirDados.setString(2, c1.getNumconta());
+            inserirDados.setInt(2, c1.getNumConta());
             inserirDados.setDouble(3, c1.getSaldo());
             LOGGER.info("Inserindo o Bill Gates na conta corrente - Banco de Dados.");
             inserirDados.execute();
 
-
+            LOGGER.info("Atualizando o saldo  de Bill Gates na conta corrente - Banco de Dados.");
             PreparedStatement atualizarDados = conexao.prepareStatement(UPDATE_TABLE);
             atualizarDados.setDouble(1, 2000);
+            atualizarDados.setInt(2,1);
+            atualizarDados.execute();
         }
         catch (Exception e) {
             LOGGER.error("Erro ao acessao o H2: ", e);
@@ -50,7 +52,7 @@ public class Programa {
     // Aqui vamos criar um método para conectar com o banco de dados H2 (Fora do método mais)
     public static Connection conectarBD() throws Exception {
         Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:~/aula13", "sa", "");
+        return DriverManager.getConnection("jdbc:h2:~/aula14", "sa", "");
     }
 
 }

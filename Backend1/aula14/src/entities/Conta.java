@@ -1,3 +1,4 @@
+package entities;
 public class Conta {
 
     private int id;
@@ -30,7 +31,6 @@ public class Conta {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public int getNumConta() {
         return numConta;
     }
