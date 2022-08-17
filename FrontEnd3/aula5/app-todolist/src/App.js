@@ -3,6 +3,20 @@ import Lista from "./componentes/Lista";
 
 function App() {
 
+  let estudos = [
+    {
+      id: 1,
+      nome: 'Criar projeto utilizando create-react-app'
+    },
+    {
+      id: 2,
+      nome: 'Fragmentar o código-fonte em componentes'
+    },
+    {
+      id: 3,
+      nome: 'Intercambiar valorers a partir de propriedades'
+    },
+  ]
 
   // Retornando o Componente Lista em App
   return (
@@ -41,7 +55,7 @@ function App() {
 
       <div className="row g-3">
         <div className="col">
-          <Lista titilo="Meus Estudos de react"/>
+          <Lista titulo="Meus estudos de React" itens={estudos} />
         </div>
       </div>
 

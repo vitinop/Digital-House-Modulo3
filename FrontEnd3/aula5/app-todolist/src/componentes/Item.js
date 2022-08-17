@@ -1,8 +1,10 @@
+export default function Item({ item }) {
 
-export default function Item(item) {
+    const { id, nome } = item;
+
     return (
-        <div className="alert alert-success" role="alert">
-            <h2 className="h6 m-0">{item.titulo}</h2>
-        </div>
+        <li className="list-group-item">
+            {id} - {nome}
+        </li>
     )
 }
