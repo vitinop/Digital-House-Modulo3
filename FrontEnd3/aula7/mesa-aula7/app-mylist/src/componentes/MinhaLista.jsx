@@ -1,4 +1,3 @@
-
 // Passe as propriedades produto e preço para o componente...
 function Produto() {
 
