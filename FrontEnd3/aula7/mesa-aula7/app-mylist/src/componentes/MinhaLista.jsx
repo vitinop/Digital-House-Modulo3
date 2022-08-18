@@ -1,9 +1,9 @@
 // Passe as propriedades produto e preço para o componente...
-function Produto() {
+function Produto(produto) {
 
     return (
         <>
-            <li>Nome do produto - R$ preço</li>
+            <li> {produto?.nome}- R$ {produto?.preco}</li>
         </>
     )
 }
@@ -17,8 +17,9 @@ export default function MinhaLista({ titulo, produtos }) {
                 <h2>Cinco primeiros produtos</h2>
                 <ul>
                     {
+                        
                         // Mapeie os cinco primeiros produtos...
-                        <Produto />
+                        <Produto produto={produtos[0]}/>
                     }
                 </ul>
             </section>

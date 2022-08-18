@@ -6,52 +6,52 @@ export default function App() {
 		{
 			id: 1,
 			nome: "Banana",
-			idade: 5.40
+			preco: 5.40
 		},
 		{
 			id: 2,
 			nome: "Uva",
-			idade: 12
+			preco: 12
 		},
 		{
 			id: 3,
 			nome: "Morango",
-			idade: 10
+			preco: 10
 		},
 		{
 			id: 4,
 			nome: "Abacate",
-			idade: 8.42
+			preco: 8.42
 		},
 		{
 			id: 5,
 			nome: "Côco",
-			idade: 2.70
+			preco: 2.70
 		},
 		{
 			id: 6,
 			nome: "Maçã",
-			idade: 3.8
+			preco: 3.8
 		},
 		{
 			id: 7,
 			nome: "Açaí",
-			idade: 18
+			preco: 18
 		},
 		{
 			id: 8,
 			nome: "Pêra",
-			idade: 5.31
+			preco: 5.31
 		},
 		{
 			id: 9,
 			nome: "Mamão",
-			idade: 2.10
+			preco: 2.10
 		},
 		{
 			id: 10,
 			nome: "Pêssego",
-			idade: 5.31
+			preco: 5.31
 		}
 	]
 
