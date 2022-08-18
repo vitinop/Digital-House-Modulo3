@@ -1,6 +1,19 @@
+import { useState } from "react";
 import Modal from "./Modal";
 
 export default function Formulario() {
+    const [nome, setNome]=useState("");
+    const [idade, setIdade]=useState("");
+
+    function getNome(elNome){
+        setNome(elNome);
+
+    }
+
+    function getIdade(elIdade) {
+        setIdade(elIdade);
+
+    }
 
     return (
         <>
@@ -14,15 +27,23 @@ export default function Formulario() {
             <div className="row">
                 <div className="col-12 col-md-6">
                     <div className="form-group my-2">
-                        <label className="mb-2" for="nome">Seu nome</label>
-                        <input type="text" id="nome" className="form-control form-control-lg"
-                            placeholder="Digite seu nome completo" />
+                        <label className="mb-2" htmlFor="nome">Seu nome</label>
+                        <input 
+                        type="text" 
+                        id="nome" 
+                        className="form-control form-control-lg"
+                        placeholder="Digite seu nome completo"
+                        onChange={evento => getNome(evento.target.value)} />
                     </div>
                 </div>
                 <div className="col-12 col-md-6 my-2">
                     <div className="form-group">
-                        <label className="mb-2" for="idade">Quantos anos você tem?</label>
-                        <input type="text" id="idade" className="form-control form-control-lg" placeholder="ex.: 18" />
+                        <label className="mb-2" htmlFor="idade">Quantos anos você tem?</label>
+                        <input type="text" 
+                        id="idade" 
+                        className="form-control form-control-lg" 
+                        placeholder="ex.: 18"
+                        onChange={evento =>getIdade(evento.target.value)} />
                     </div>
                 </div>
                 <div className="col-12 mt-4 d-grid">
@@ -30,7 +51,7 @@ export default function Formulario() {
                 </div>
             </div>
 
-            <Modal nome="Willian" idade={19} />
+            <Modal nome={nome} idade={idade} />
         </>
     )
 } 
